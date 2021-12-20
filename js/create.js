@@ -1,9 +1,9 @@
 document.getElementById('generate').onclick = () => {
 	const query = document.getElementById('searchBar').value
 	if (query !== '') {
-		const url = `${window.location.href.replace(
-			window.location.pathname,
-			''
+		const url = `${window.location.href.substring(
+			0,
+			window.location.href.lastIndexOf('/')
 		)}/?q=${encodeURI(query)}`
 		document.getElementById('link').innerHTML = url
 		document.getElementById('generatedLink').style.display = 'grid'
