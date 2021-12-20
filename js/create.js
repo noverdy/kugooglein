@@ -1,7 +1,10 @@
 document.getElementById('generate').onclick = () => {
 	const query = document.getElementById('searchBar').value
 	if (query !== '') {
-		const url = `${window.location.host}/?q=${encodeURI(query)}`
+		const url = `${window.location.href.replace(
+			window.location.pathname,
+			''
+		)}/?q=${encodeURI(query)}`
 		document.getElementById('link').innerHTML = url
 		document.getElementById('generatedLink').style.display = 'grid'
 		document.getElementById('generatedLink').classList.remove('copied-link')
